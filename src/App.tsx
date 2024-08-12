@@ -23,7 +23,7 @@ const App: React.FC = () => {
     };
 
   const handleGetStarted = async () => {
-    const data = await axios.get(`http://bannerbackend.thesanyam.com:3000/banner?id=${bannerId}}`);
+    const data = await axios.get(`https://bannerbackend.thesanyam.com/banner?id=${bannerId}}`);
     if(data.status === 200){
       console.log("started fetching");
       setTitle(data.data.title);
@@ -44,7 +44,7 @@ const App: React.FC = () => {
   };
 
   const handlePublish = async () => {
-    const response = await axios.post('http://bannerbackend.thesanyam.com:3000/banner', {
+    const response = await axios.post('https://bannerbackend.thesanyam.com/banner', {
       title: title,
       description: description,
       timer: totalSeconds,
