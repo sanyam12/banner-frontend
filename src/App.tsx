@@ -23,20 +23,20 @@ const App: React.FC = () => {
     };
 
   const handleGetStarted = async () => {
-    const data = await axios.get(`https://bannerbackend.thesanyam.com/banner?id=${bannerId}}`);
-    if(data.status === 200){
-      console.log("started fetching");
-      setTitle(data.data.title);
-      setDescription(data.data.description);
-      setLink(data.data.url);
-      const durationInSeconds = data.data.timer;
-      setHours(Math.floor(durationInSeconds / 3600));
-      setMinutes(Math.floor((durationInSeconds % 3600) / 60));
-      setSeconds(durationInSeconds % 60);
+    // const data = await axios.get(`https://bannerbackend.thesanyam.com/banner?id=${bannerId}}`);
+    // if(data.status === 200){
+      // console.log("started fetching");
+      // setTitle(data.data.title);
+      // setDescription(data.data.description);
+      // setLink(data.data.url);
+      // const durationInSeconds = data.data.timer;
+      // setHours(Math.floor(durationInSeconds / 3600));
+      // setMinutes(Math.floor((durationInSeconds % 3600) / 60));
+      // setSeconds(durationInSeconds % 60);
       setShowBanner(true);
-    }else{
-      console.log("Error in fetching data");
-    }
+    // }else{
+    //   console.log("Error in fetching data");
+    // }
   };
 
   const handleCloseBanner = () => {
@@ -44,18 +44,18 @@ const App: React.FC = () => {
   };
 
   const handlePublish = async () => {
-    const response = await axios.post('https://bannerbackend.thesanyam.com/banner', {
-      title: title,
-      description: description,
-      timer: totalSeconds,
-      url: link,
-      id: bannerId
-    });
-    if(response.status === 200){
-      console.log("Banner published successfully");
-    }else{
-      console.log("Error in publishing banner");
-    }
+    // const response = await axios.post('https://bannerbackend.thesanyam.com/banner', {
+    //   title: title,
+    //   description: description,
+    //   timer: totalSeconds,
+    //   url: link,
+    //   id: bannerId
+    // });
+    // if(response.status === 200){
+    //   console.log("Banner published successfully");
+    // }else{
+    //   console.log("Error in publishing banner");
+    // }
   };
 
   const totalSeconds = hours * 3600 + minutes * 60 + seconds;
