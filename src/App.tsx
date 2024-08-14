@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Banner from './components/banner';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 
@@ -12,7 +12,7 @@ const App: React.FC = () => {
   const [description, setDescription] = useState<string>('');
   const [link, setLink] = useState<string>('');
   const [showBanner, setShowBanner] = useState<boolean>(false);
-  const [bannerId, setBannerId] = useState<string>('');
+  // const [bannerId, setBannerId] = useState<string>('');
 
   const handleInputChange = (setter: React.Dispatch<React.SetStateAction<number>>) =>
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -91,9 +91,9 @@ const App: React.FC = () => {
                 type="text"
                 placeholder="Enter your banner ID"
                 className="bg-white p-4 rounded-md w-full mb-4"
-                onChange={
-                  (e: React.ChangeEvent<HTMLInputElement>) => setBannerId(e.target.value)
-                }
+                // onChange={
+                //   // (e: React.ChangeEvent<HTMLInputElement>) => setBannerId(e.target.value)
+                // }
               ></input>
               <button
                 className="bg-blue-500 text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-blue-600"
